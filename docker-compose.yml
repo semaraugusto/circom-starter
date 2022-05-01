@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  my-app:
+    build: .
+    volumes:
+      - ./circuits:/usr/src/app/circuits
+      - ./cerimony:/usr/src/app/cerimony
+
+    # command: ["ls", "node_modules/hardhat-circom/dist"]
+    # command: ["npx", "hardhat"]
+    command: ["npx", "hardhat", "circom", "--deterministic", "--debug", "--verbose"]
